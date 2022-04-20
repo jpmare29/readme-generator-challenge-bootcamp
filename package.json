@@ -1,0 +1,27 @@
+{
+  "name": "readme-generator-challenge-bootcamp",
+  "version": "1.0.0",
+  "description": "Command line application for generating a professional quality README.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpmare29/readme-generator-challenge-bootcamp.git"
+  },
+  "keywords": [
+    "CLI",
+    "README",
+    "Generator"
+  ],
+  "author": "jpmare29",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpmare29/readme-generator-challenge-bootcamp/issues"
+  },
+  "homepage": "https://github.com/jpmare29/readme-generator-challenge-bootcamp#readme",
+  "dependencies": {
+    "inquirer": "^8.2.2"
+  }
+}
