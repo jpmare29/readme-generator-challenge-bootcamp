@@ -33,19 +33,6 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'repo',
-        message: 'What is the name of your repository. (Required)',
-        validate: userAnswer => {
-            if(userAnswer) {
-                return true;
-            } else {
-                console.log('Please enter the name of your repository.');
-                return false;
-            }
-        }
-    },
-    {
-        type: 'input',
         name: 'email',
         message: 'What is your email address. (Required)',
         validate: userAnswer => {
@@ -99,8 +86,9 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, readMeText) {
-    fs.writeFile(`${fileName}.md`, readMeText, err => {
+function writeToFile(readMeText) {
+
+    fs.writeFile('README.md', readMeText, err => {
         if (err) throw new Error(err);
 
         console.log('File written! Please checkout README.md in this directory to see it!');
@@ -116,5 +104,6 @@ function init() {
 init()
     .then(userSelection => {
         console.log(userSelection);
-        //generateMarkdown(userSelection);
+        const content = generateMarkdown(userSelection);
+        writeToFile(content);
     });

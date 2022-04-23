@@ -6,35 +6,45 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {
+function renderLicenseLink(array) {
+  let license = array[0];
   if (license === 'GNU') {
-
+    return `[Link to License](https://choosealicense.com/licenses/agpl-3.0/)`
   } else if (license === 'MPL') {
-
+    return `[Link to License](https://choosealicense.com/licenses/mpl-2.0/)`
   } else if (license === 'Apache') {
-
+    return `[Link to License](https://choosealicense.com/licenses/apache-2.0/)`
   } else if (license === 'MIT') {
-
+    return `[Link to License](https://choosealicense.com/licenses/mit/)`
   } else if (license === 'The Unlicense') {
-    
+    return `[Link to License](https://choosealicense.com/licenses/unlicense/)`
   } else {
     return '';
   }
 }
 
+// TODO: Create a function that returns the license section of README
+// If there is no license, return an empty string
+function renderLicenseSection(license) {
+  return `
+## License
+    
+  This project is covered by the ${license} license, please refer to the link below to learn more.
+  
+  ${renderLicenseLink(license)}
+  `
+}
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+const { title, description, installation, usage, contribution, test, license, github, email } = data;
 
 const generateDescription = () => {
-    if (data.description) {
+    if (description) {
     return `
-    ## Description
+## Description
 
-    ${data.description}
+  ${description}
     `
   }
 
@@ -42,35 +52,37 @@ const generateDescription = () => {
 }
 
 const generateInstallation = () => {
-    if (data.installation) {
+    if (installation) {
     return `
-    ## Installation
+## Installation
 
-    ${data.installation}
+  ${installation}
     `
   }
+
+  return ''
 }
 
 const tableInstallation = () => {
-  if (data.installation) {
+  if (installation) {
   return `- [Installation](#installation)`
   }
   return ''
 }
 
 const generateUsage = () => {
-  if (data.usage) {
+  if (usage) {
     return `
-    ## Usage
+## Usage
 
-    ${data.usage}
+  ${usage}
     `
   }
   return ''
 }
 
 const tableUsage = () => {
-  if (data.usage) {
+  if (usage) {
   return `- [Usage](#usage)`
 }
 return ''
@@ -78,76 +90,91 @@ return ''
 }
 
 const generateContribution = () => {
-  if (data.contribution) {
+  if (contribution) {
     return `
-    ## Contribution Guideline
+## Contribution Guidelines
 
-    ${data.contribution}
+  ${contribution}
     `
   }
   return ''
 }
 
 const tableContribution = () => {
-  if (data.contribution) {
-  return `- [Contribution](#contribution)`
+  if (contribution) {
+  return `- [Contribution](#contribution-guidelines)`
 }
 return ''
 }
 
-const generateTest = () => {
-  if (data.test) {
-    return `
-    ## Tests
+const tableLicense = () => {
+  if (license) {
+    return `- [License](#license)`
+  }
+}
 
-    ${data.test}
+const generateTest = () => {
+  if (test) {
+    return `
+## Test
+
+  ${test}
     `
   }
   return ''
 }
 
 const tableTest = () => {
-  if (data.test) {
+  if (test) {
   return `- [Test](#test)`
 }
 return ''
 }
 
-const generateLicense = () => {
-  if (data.license) {
-    return renderLicenseSection(data.license);
-  }
-  return '';
+const generateQuestions = () => {
+  return `
+## Questions
+  [Github Profile](https://github.com/${github})
+  
+  For any additional questions reach out at: <${email}>
+  `
 }
+
 
 const populateToC = () => {
   return `
   ${tableInstallation()}
   ${tableUsage()}
   ${tableContribution()}
+  ${tableLicense()}
   ${tableTest()}
+  - [Questions](#questions)
   `
 
 }
 
   return `
-  # ${data.title}
+# ${title}
 
-  ${renderLicenseBadge(data.license)}
+${renderLicenseBadge(license)}
 
-  ${generateDescription()}
+${generateDescription()}
 
-  ## Table of Contents
+## Table of Contents
 
-  ${populateToC()}
+${populateToC()}
 
-  ${generateInstallation()}
+${generateInstallation()}
 
-  ${generateUsage()}
+${generateUsage()}
 
-  ${generateContribution()}
+${generateContribution()}
 
-  ${generateTest()}
+${renderLicenseSection(license)}
+
+${generateTest()}
+
+${generateQuestions()}
 
 `;
 }
