@@ -11,8 +11,10 @@ each input contain anything or if they return a falsy value.
 If it does have a flasy value an empty string will be returned in place of user input
 The functions are then called in the template area and will be returned to a 
 variable that will then be passed into the writeFile function to generate
-the README file.
-Proper naming syntax is used so that all links in the README function
+the genREADME file.
+Proper naming syntax is used so that all links in the genREADME function
 and that all sections display properly.
+
+*changed name of generated readme after recording video so main one could be used for explanatory purposes
 
 [Link to Video](https://drive.google.com/file/d/1pxeOVTHy4OpiUSsXGO3nU8AwJSwuQ-bu/view)
