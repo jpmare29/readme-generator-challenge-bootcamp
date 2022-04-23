@@ -1,12 +1,12 @@
 
-# title
+# Sample Title
 
-![GNU License](https://img.shields.io/static/v1?label=License&message=GNU&color=blue)
+![MIT License](https://img.shields.io/static/v1?label=License&message=MIT&color=blue)
 
 
 ## Description
 
-  test
+  Sample description
     
 
 ## Table of Contents
@@ -16,41 +16,37 @@
   - [Usage](#usage)
   - [Contribution](#contribution-guidelines)
   - [License](#license)
-  - [Test](#test)
+  
   - [Questions](#questions)
   
 
 
 ## Installation
 
-  test
+  Sample instructions
     
 
 
 ## Usage
 
-  test
+  Sample usage
     
 
 
 ## Contribution Guidelines
 
-  test
+  Sample guidelines
     
 
 
 ## License
     
-  This project is covered by the GNU license, please refer to the link below to learn more.
+  This project is covered by the MIT license, please refer to the link below to learn more.
   
-  [Link to License](https://choosealicense.com/licenses/agpl-3.0/)
+  [Link to License](https://choosealicense.com/licenses/mit/)
   
 
 
-## Test
-
-  test
-    
 
 
 ## Questions
@@ -58,4 +54,3 @@
   
   For any additional questions reach out at: <jpmare29@gmail.com>
   
-
