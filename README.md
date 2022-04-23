@@ -1,56 +1,18 @@
+When the user calls the index.js file via node they will be presented with a series of prompts
+When they finish responding to the prompts an object containing their inputs
+will be pased into the generateMarkdown function which was imported/exported
+from a file in the assets directory.
+This function first destructures the returned input object, it then
+tests to see if anything was entered for each optional input.
+If something was a section with the appropriate header will be created
+and a link to the section will be created for the table of contents.
+The functions use conditional logic to test if the variable associated with
+each input contain anything or if they return a falsy value.
+If it does have a flasy value an empty string will be returned in place of user input
+The functions are then called in the template area and will be returned to a 
+variable that will then be passed into the writeFile function to generate
+the README file.
+Proper naming syntax is used so that all links in the README function
+and that all sections display properly.
 
-# Sample Title
-
-![MIT License](https://img.shields.io/static/v1?label=License&message=MIT&color=blue)
-
-
-## Description
-
-  Sample description
-    
-
-## Table of Contents
-
-
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Contribution](#contribution-guidelines)
-  - [License](#license)
-  
-  - [Questions](#questions)
-  
-
-
-## Installation
-
-  Sample instructions
-    
-
-
-## Usage
-
-  Sample usage
-    
-
-
-## Contribution Guidelines
-
-  Sample guidelines
-    
-
-
-## License
-    
-  This project is covered by the MIT license, please refer to the link below to learn more.
-  
-  [Link to License](https://choosealicense.com/licenses/mit/)
-  
-
-
-
-
-## Questions
-  [Github Profile](https://github.com/jpmare29)
-  
-  For any additional questions reach out at: <jpmare29@gmail.com>
-  
+[Link to Video](https://drive.google.com/file/d/1pxeOVTHy4OpiUSsXGO3nU8AwJSwuQ-bu/view)

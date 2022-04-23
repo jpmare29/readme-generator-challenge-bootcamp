@@ -88,10 +88,10 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(readMeText) {
 
-    fs.writeFile('README.md', readMeText, err => {
+    fs.writeFile('genREADME.md', readMeText, err => {
         if (err) throw new Error(err);
 
-        console.log('File written! Please checkout README.md in this directory to see it!');
+        console.log('File written! Please checkout genREADME.md in this directory to see it!');
     })
 }
 
