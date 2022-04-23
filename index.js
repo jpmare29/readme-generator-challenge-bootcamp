@@ -103,7 +103,12 @@ function init() {
 // Function call to initialize app
 init()
     .then(userSelection => {
-        console.log(userSelection);
         const content = generateMarkdown(userSelection);
         writeToFile(content);
     });
+//Above is the chain of function .then to call the inquirer function
+//use the question objects to get user input
+//take that returned object and pass it into the generateMarkdown function
+//then take the string returned from that function and pass it 
+//into the write to file function which will insert that string
+//into a new README.md file or overwrite an existing one

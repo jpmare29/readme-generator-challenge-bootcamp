@@ -37,8 +37,15 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+//destructure object of user input
 const { title, description, installation, usage, contribution, test, license, github, email } = data;
+//Each respective function checks to see if the user entered
+//any text in each of the optional sections
+//If they did enter anything the respective section with the appropriate title
+//will be returned as a string when the function is called
 
+//If a section needs to be generated then a link for the table of contents
+//will also be created.
 const generateDescription = () => {
     if (description) {
     return `
@@ -130,7 +137,8 @@ const tableTest = () => {
 }
 return ''
 }
-
+// no conditionals as github/email are required in inquirer
+// so this section will always be created, as will it table of contents link
 const generateQuestions = () => {
   return `
 ## Questions
@@ -152,7 +160,7 @@ const populateToC = () => {
   `
 
 }
-
+//template for README to be created
   return `
 # ${title}
 
@@ -175,7 +183,6 @@ ${renderLicenseSection(license)}
 ${generateTest()}
 
 ${generateQuestions()}
-
 `;
 }
 
